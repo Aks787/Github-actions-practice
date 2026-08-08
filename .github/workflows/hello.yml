@@ -1,15 +1,15 @@
 # Workflows
 
-name: Hello
+name: Multiple Commands
 
 on:
-  workflow_dispatch: 
+  push: 
 
 jobs:
-  say-hello:
+  test:
     runs-on: ubuntu-latest
-    steps:
-      - name: Say hello to everyone
-        run: echo "Hello-friend"
 
-         
+    steps:
+      - run: echo "Starting workflow"
+      - run: echo "Runnign tests"
+      - run: echo "Workflow completed"
