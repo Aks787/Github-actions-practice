@@ -11,7 +11,7 @@ on:
 # A jobs is a collection of steps executed on a runner
 jobs:
   checkout:
-    runs-on: ubuntu-latest  #
+    runs-on: ubuntu-latest  #Tells GitHub to run the job on an Ubuntu runner.
     #Individual tasks inside a jobs
     steps:
       - name: code checking
