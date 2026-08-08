@@ -14,7 +14,8 @@ jobs:
     runs-on: ubuntu-latest  #
     #Individual tasks inside a jobs
     steps:
-      - uses: actions/checkout@v4 #executes a resusable acions
+      - name: code checking
+        uses: actions/checkout@v4 #executes a resusable acions
       # Executes a command shell
       - run: pwd 
       - run: ls
