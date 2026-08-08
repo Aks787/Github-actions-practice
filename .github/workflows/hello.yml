@@ -5,6 +5,8 @@ name: Checkout Code
 #it defines when the workflows should run
 on:
   pull_request:
+    branches: [ main ]
+  workflow_dispatch:   
 
 # A jobs is a collection of steps executed on a runner
 jobs:
