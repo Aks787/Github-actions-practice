@@ -1,15 +1,20 @@
 # Workflows
+#It gives name to the Workflows, although its not necessary if its omitted, Github uses its workflow file name
+name: Checkout Code
 
-name: Multiple Commands
-
+#it defines when the workflows should run
 on:
-  push: 
+  pull_request:
 
+# A jobs is a collection of steps executed on a runner
 jobs:
-  test:
-    runs-on: ubuntu-latest
-
+  checkout:
+    runs-on: ubuntu-latest  #
+    #Individual tasks inside a jobs
     steps:
-      - run: echo "Starting workflow"
-      - run: echo "Runnign tests"
-      - run: echo "Workflow completed"
+      - uses: actions/checkout@v4 #executes a resusable acions
+      # Executes a command shell
+      - run: pwd 
+      - run: ls
+      
+    
