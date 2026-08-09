@@ -4,7 +4,7 @@ name: Linux Commands
 on:
   push:
     branches: [main]
-workflow_dispatch:
+    workflow_dispatch:
 # It is a collection of steps that executes on a runner
 jobs:
   linux-commands-practice: #job name
