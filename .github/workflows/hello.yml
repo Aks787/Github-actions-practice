@@ -11,7 +11,6 @@ jobs:
     runs-on: ubuntu-latest #Tells the github to run the job on a ubuntu
     # Individual tasks inside a job
     steps:
-      - name: Trying the commands 
       #executes the shell commands
       - name: Checked the present working locations
         run: pwd
