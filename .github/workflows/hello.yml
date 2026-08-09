@@ -13,6 +13,9 @@ jobs:
     steps:
       - name: Trying the commands 
       #executes the shell commands
+      - name: Checked the present working locations
         run: pwd
+      - name: list the files
         run: ls -l
+      - name: Check the swap space
         run: uname -r
