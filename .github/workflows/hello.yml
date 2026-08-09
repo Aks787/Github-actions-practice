@@ -1,20 +1,28 @@
-# It gives a name to the workflows, If omitted Github uses the workflow file name
-name: Linux Commands
-# It defines where to run the workflow
+name: node.js ci
+
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
-# It is a collection of steps that executes on a runner
+
 jobs:
-  linux-commands-practice: #job name
-    runs-on: ubuntu-latest #Tells the github to run the job on a ubuntu
-    # Individual tasks inside a job
+  build:
+    runs-on: ubuntu-latest
+
     steps:
-      #executes the shell commands
-      - name: Checked the present working locations
-        run: pwd
-      - name: list the files
-        run: ls -l
-      - name: Check the swap space
-        run: uname -r
+      - name: Checkout code
+        run: actions/checkout@v4
+
+      - name: Setup node.js
+        run: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build Applications
+        run: npm build
+          
+          
