@@ -1,23 +1,18 @@
-# Workflows
-#It gives name to the Workflows, although its not necessary if its omitted, Github uses its workflow file name
-name: Checkout Code
-
-#it defines when the workflows should run
+# It gives a name to the workflows, If omitted Github uses the workflow file name
+name: Linux Commands
+# It defines where to run the workflow
 on:
-  pull_request:
-    branches: [ main ]
-  workflow_dispatch:   
-
-# A jobs is a collection of steps executed on a runner
+  push:
+    branches: [main]
+workflow_dispatch:
+# It is a collection of steps that executes on a runner
 jobs:
-  checkout:
-    runs-on: ubuntu-latest  #Tells GitHub to run the job on an Ubuntu runner.
-    #Individual tasks inside a jobs
+  linux-commands-practice: #job name
+    runs-on: ubuntu-latest #Tells the github to run the job on a ubuntu
+    # Individual tasks inside a job
     steps:
-      - name: code checking
-        uses: actions/checkout@v4 #executes a resusable acions
-      # Executes a command shell
-      - run: pwd 
-      - run: ls
-      
-    
+      - name: Trying the commands 
+      #executes the shell commands
+        run: pwd
+        run: ls -l
+        run: uname -r
