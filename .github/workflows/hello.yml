@@ -9,10 +9,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        run: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Setup node.js
-        run: actions/setup-node@v4
+        uses: actions/setup-node@v4
         with:
           node-version: 20
 
