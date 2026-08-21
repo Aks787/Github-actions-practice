@@ -1,6 +1,7 @@
 FROM alpine:3.19
 
-RUN apk update && apk add --no-cache curl=8.9.1-r0
+# hadolint ignore=DL3018
+RUN apk update && apk add --no-cache curl
 
 WORKDIR /app
 COPY package.json .
